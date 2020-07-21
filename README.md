@@ -1,4 +1,20 @@
 # kombu-kube-example
+Build:
+
+`docker build user_service --tag user-service:1.0`
+
+`docker build payment_service --tag payment-service:1.0`
+
+Run:
+
+`kubectl apply -f rabbitmq/rabbitmq-deployment.yaml`
+
+`kubectl apply -f user_service/deployment.yaml`
+
+`kubectl appply -f payment_service/deployment.yaml`
+
+
+Rabbitmq:
 1. Check all payments/users
 `{"reply_to_exchange": "worker", "reply_to_routing_key": "worker"}`
 2. Add user
